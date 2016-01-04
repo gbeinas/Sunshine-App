@@ -66,29 +66,12 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
-            /*String [] forecast = {
-            "Today Sunny - 83/56",
-            "Sunday Sunny - 83/56",
-            "Monday Sunny - 83/56",
-            "Thuesday Sunny - 83/56",
-            "Thursday Sunny - 83/56",
-            "Friday Sunny - 83/56",
-            "Saturday Sunny - 83/56",
-            "Friday Sunny - 83/56",
-            "Friday Sunny - 83/56",
-            "Friday Sunny - 83/56",
-            "Friday Sunny - 83/56",
-            "Friday Sunny - 83/56",
-            "Friday Sunny - 83/56",};*/
-
             Forecasts forecasts = new Forecasts();
-
             List<String> weekforecast = new ArrayList<String>(Arrays.asList(forecasts.forecast));
-
             ArrayAdapter<String> mForecastAdapter = new ArrayAdapter<String>(getActivity(),R.layout.list_item_forecast,R.id.list_item_forecast_textview,weekforecast);
             ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
             listView.setAdapter(mForecastAdapter);
+
             return rootView;
         }
     }
